@@ -11,7 +11,8 @@ using UnityEngine.UIElements;
 
 public class playerController : MonoBehaviour
 {
-    #region Variables 
+    #region Variables
+
     // Health
     public int maxHealth = 100;
     public int health;
@@ -45,12 +46,9 @@ public class playerController : MonoBehaviour
     public AudioSource walk;
     public AudioSource heal;
     public AudioSource takeDamage;
-    
 
     #endregion
 
-
-    
 
     #region UnityFunctions
 
@@ -108,6 +106,7 @@ public class playerController : MonoBehaviour
             anim.SetInteger("States", 0);
         }
     }
+
     #endregion
 
 
@@ -127,7 +126,7 @@ public class playerController : MonoBehaviour
             }
         }
     }
-    
+
     private void Walk(Vector2 dir)
     {
         rb.velocity = (new Vector2(dir.x * speed, rb.velocity.y));
@@ -160,7 +159,7 @@ public class playerController : MonoBehaviour
             Destroy(collider2D.gameObject);
             coins++;
         }
-        
+
         if (collider2D.CompareTag("InvWall"))
         {
             collider2D.gameObject.GetComponent<InvWall>().Open();

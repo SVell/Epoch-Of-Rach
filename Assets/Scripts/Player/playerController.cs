@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Tilemaps;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -158,6 +160,11 @@ public class playerController : MonoBehaviour
             Destroy(collider2D.gameObject);
             coins++;
         }
+        
+        if (collider2D.CompareTag("InvWall"))
+        {
+            collider2D.gameObject.GetComponent<InvWall>().Open();
+        }
 
         if (health < maxHealth && collider2D.CompareTag("Potion"))
         {
@@ -170,11 +177,19 @@ public class playerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collider2D)
+    {
+        if (collider2D.CompareTag("InvWall"))
+        {
+            collider2D.gameObject.GetComponent<InvWall>().Close();
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision2D)
     {
         if (collision2D.gameObject.CompareTag("Obstacle"))
         {
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -194,6 +209,8 @@ public class playerController : MonoBehaviour
 
     public void Die()
     {
+        // TODO: Die sound
+        takeDamage.Play();
         dieMenu.Die();
         Destroy(gameObject);
     }

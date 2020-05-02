@@ -208,22 +208,28 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Chest.cs" t="Include" />
-          <e p="Destroyer.cs" t="Include" />
-          <e p="FireBall.cs" t="Include" />
-          <e p="FollowingEnemy.cs" t="Include" />
-          <e p="FollowRadius.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
-          <e p="HealingPotion.cs" t="Include" />
-          <e p="HealthBar.cs" t="Include" />
+          <e p="Items" t="Include">
+            <e p="Chest.cs" t="Include" />
+            <e p="Destroyer.cs" t="Include" />
+            <e p="FireBall.cs" t="Include" />
+            <e p="HealingPotion.cs" t="Include" />
+          </e>
           <e p="PauseMenu.cs" t="Include" />
-          <e p="PlayerComabt.cs" t="Include" />
-          <e p="playerController.cs" t="Include" />
-          <e p="playerJump.cs" t="Include" />
+          <e p="Player" t="Include">
+            <e p="HealthBar.cs" t="Include" />
+            <e p="PlayerComabt.cs" t="Include" />
+            <e p="playerController.cs" t="Include" />
+            <e p="playerJump.cs" t="Include" />
+          </e>
           <e p="SettingMenu.cs" t="Include" />
-          <e p="Shooting.cs" t="Include" />
-          <e p="Unit.cs" t="Include" />
-          <e p="WalkingEnemy.cs" t="Include" />
+          <e p="Units" t="Include">
+            <e p="FollowingEnemy.cs" t="Include" />
+            <e p="FollowRadius.cs" t="Include" />
+            <e p="Shooting.cs" t="Include" />
+            <e p="Unit.cs" t="Include" />
+            <e p="WalkingEnemy.cs" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

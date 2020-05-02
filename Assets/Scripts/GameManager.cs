@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // TODO: Total coins
     // Start is called before the first frame update
     void Start()
     {

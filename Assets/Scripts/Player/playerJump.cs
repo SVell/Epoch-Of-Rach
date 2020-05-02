@@ -15,7 +15,7 @@ public class playerJump : MonoBehaviour
     public bool isGrounded;
     public Transform point;
     public float pointRad = 0.3f;
-    public LayerMask whatIsGround;
+    public LayerMask[] whatIsGround;
     
     // Start is called before the first frame update
     void Start()
@@ -28,8 +28,17 @@ public class playerJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(point.position,pointRad,whatIsGround);
         
+        if(Physics2D.OverlapCircle(point.position,pointRad,whatIsGround[0]))
+        {
+            isGrounded = Physics2D.OverlapCircle(point.position,pointRad,whatIsGround[0]);
+        }
+        else
+        {
+            isGrounded = Physics2D.OverlapCircle(point.position,pointRad,whatIsGround[1]);
+        }
+        
+
         if (rb.velocity.y < 0 && !isGrounded)
         {
             print("Fly");

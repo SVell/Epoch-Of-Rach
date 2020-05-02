@@ -124,6 +124,10 @@ public class playerController : MonoBehaviour
             {
                 x.GetComponent<Unit>().TakeDamage(damage);
             }
+            else if (x != null && x.GetComponent<box>() != null)
+            {
+                x.GetComponent<box>().TakeDamage();
+            }
         }
     }
 

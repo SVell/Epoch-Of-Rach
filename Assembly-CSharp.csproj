@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Items\Destroyer.cs" />
      <Compile Include="Assets\Scripts\Items\FireBall.cs" />
      <Compile Include="Assets\Scripts\Items\HealingPotion.cs" />
+     <Compile Include="Assets\Scripts\Items\box.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Player\HealthBar.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerComabt.cs" />

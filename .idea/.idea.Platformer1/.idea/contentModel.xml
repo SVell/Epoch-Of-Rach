@@ -216,6 +216,7 @@
             <e p="Destroyer.cs" t="Include" />
             <e p="FireBall.cs" t="Include" />
             <e p="HealingPotion.cs" t="Include" />
+            <e p="MovingPlatform.cs" t="Include" />
           </e>
           <e p="PauseMenu.cs" t="Include" />
           <e p="Player" t="Include">

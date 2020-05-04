@@ -27,6 +27,7 @@ public class playerController : MonoBehaviour
     public playerJump plJ;
 
     private int coins = 0;
+    private int keys = 0;
 
     // Attack
     public int damage = 20;
@@ -38,6 +39,7 @@ public class playerController : MonoBehaviour
     // UI
     public Text coinCount;
     public PauseMenu dieMenu;
+    public GameObject keyUI;
 
 
     // Audio components
@@ -133,6 +135,15 @@ public class playerController : MonoBehaviour
             }
         }
     }
+    
+    IEnumerator PickKey()
+    {
+        keyUI.SetActive(true);
+        Text keyText = keyUI.GetComponentInChildren<Text>();
+        keyText.text = "x" + keys;
+        yield return new WaitForSeconds(2f);
+        keyUI.SetActive(false);
+    }
 
     private void Walk(Vector2 dir)
     {
@@ -166,6 +177,21 @@ public class playerController : MonoBehaviour
             coin.Play();
             Destroy(collider2D.gameObject);
             coins++;
+        }
+        // Key pick up
+        if (collider2D.CompareTag("Key"))
+        {
+            Destroy(collider2D.gameObject);
+            keys++;
+            StartCoroutine(PickKey());
+        }
+        // Open gate
+        if (collider2D.CompareTag("Gate"))
+        {
+            Animator anim = collider2D.GetComponent<Animator>();
+            anim.SetBool("Open",true);
+            keys--;
+            StartCoroutine(PickKey());
         }
 
         // Invisible walls

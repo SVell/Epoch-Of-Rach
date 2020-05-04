@@ -16,13 +16,13 @@ public class FireBall : MonoBehaviour
     
     void Update()
     {
-        transform.Translate( direction*transform.right * movementSpeed * Time.deltaTime);
+        transform.Translate( transform.right * (direction * movementSpeed * Time.deltaTime));
     }
 
     // Destroy and play part with sound
     void OnCollisionEnter2D(Collision2D collision2D)
     {
-        if (collision2D.gameObject.tag == "Player")
+        if (collision2D.gameObject.CompareTag("Player"))
         {
             collision2D.gameObject.GetComponent<playerController>().TakeDamage(damage);
         }

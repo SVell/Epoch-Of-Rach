@@ -12,6 +12,8 @@ TagManager:
   - InvWall
   - Key
   - Gate
+  - Destroyable
+  - Knife
   layers:
   - Default
   - TransparentFX

@@ -25,6 +25,7 @@ public class playerController : MonoBehaviour
     public float speed = 10f;
     public float time = 0;
     public playerJump plJ;
+    private bool facingRight = true;
 
     private int coins = 0;
     private int keys = 0;
@@ -151,21 +152,28 @@ public class playerController : MonoBehaviour
 
         if (rb.velocity.x > 0)
         {
+            if(!facingRight) 
+                transform.Rotate(0,180,0);
+            facingRight = true;
             if (plJ.isGrounded)
             {
                 anim.SetInteger("States", 1);
             }
 
-            transform.localScale = new Vector3(1, 1, 1);
+            
+            //transform.localScale = new Vector3(1, 1, 1);
         }
         else if (rb.velocity.x < 0)
         {
+            if(facingRight) 
+                transform.Rotate(0,180,0);
+            facingRight = false;
             if (plJ.isGrounded)
             {
                 anim.SetInteger("States", 1);
             }
-
-            transform.localScale = new Vector3(-1, 1, 1);
+            
+            //transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 

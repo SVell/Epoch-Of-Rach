@@ -14,7 +14,8 @@ public class box : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
     }
-
+    
+    //Changing sprite when damage is taken
     public void TakeDamage()
     {
         print("Damage");

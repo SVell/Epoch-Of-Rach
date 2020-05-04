@@ -10,19 +10,14 @@ public class FollowRadius : MonoBehaviour
 
     void Start()
     {
+        // Set star pos
         destination = GetComponent<AIDestinationSetter>();
-        //startingPos = gameObject.transform;
     }
 
-    void Update()
-    {
-        //if(destination.target == null)
-            //destination.target = startingPos;
-    }
-    
     void OnTriggerEnter2D(Collider2D collider2D)
     {
         
+        // Follow player
         if (collider2D.gameObject.tag == "Player")
         {
             destination.target = collider2D.gameObject.transform;
@@ -31,7 +26,7 @@ public class FollowRadius : MonoBehaviour
     
     void OnTriggerExit2D(Collider2D collider2D)
     {
-        
+        // Got o the starting pos
         if (collider2D.gameObject.tag == "Player")
         {
             destination.target = startingPos;

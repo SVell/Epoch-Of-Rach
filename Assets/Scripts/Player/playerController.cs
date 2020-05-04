@@ -108,8 +108,9 @@ public class playerController : MonoBehaviour
     }
 
     #endregion
-
-
+    
+    // Attack enumerator for anim delay
+    // TODO: Attack trigger delay
     IEnumerator Attack()
     {
         anim.SetInteger("States", 3);
@@ -122,10 +123,12 @@ public class playerController : MonoBehaviour
         {
             if (x != null && x.GetComponent<Unit>() != null)
             {
+                // Damage enemies
                 x.GetComponent<Unit>().TakeDamage(damage);
             }
             else if (x != null && x.GetComponent<box>() != null)
             {
+                // Damage boxes
                 x.GetComponent<box>().TakeDamage();
             }
         }
@@ -157,6 +160,7 @@ public class playerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
+        // Coin Pick Up
         if (collider2D.CompareTag("Coin"))
         {
             coin.Play();
@@ -164,11 +168,13 @@ public class playerController : MonoBehaviour
             coins++;
         }
 
+        // Invisible walls
         if (collider2D.CompareTag("InvWall"))
         {
             collider2D.gameObject.GetComponent<InvWall>().Open();
         }
 
+        // Health potions limitation
         if (health < maxHealth && collider2D.CompareTag("Potion"))
         {
             heal.Play();
@@ -199,6 +205,7 @@ public class playerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        // TODO: add force in opposite direction
         health -= damage;
         takeDamage.Play();
         healthBar.SetHealth(health);
@@ -210,7 +217,7 @@ public class playerController : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    public void Die()
+    void Die()
     {
         // TODO: Die sound
         takeDamage.Play();

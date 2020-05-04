@@ -17,12 +17,14 @@ public class WalkingEnemy : MonoBehaviour
     private void Update()
     {
         
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        transform.Translate(Vector2.right * (speed * Time.deltaTime));
 
-        int layer_mask = LayerMask.GetMask ("Ground");
-        RaycastHit2D groundInfo = Physics2D.Raycast (groundDetection.position, Vector2.down, distance, layer_mask);
+        // Raycast to detect the end of the platform
+        int layerMask = LayerMask.GetMask ("Ground");
+        RaycastHit2D groundInfo = Physics2D.Raycast (groundDetection.position, Vector2.down, distance, layerMask);
         if (groundInfo.collider == false)
         {
+            // Change direction of the movement
             if (movingRight == true)
             {
                 transform.eulerAngles = new UnityEngine.Vector3(0,-180,0);
@@ -38,7 +40,7 @@ public class WalkingEnemy : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision2D)
     {
-        if (collision2D.gameObject.tag == "Player")
+        if (collision2D.gameObject.CompareTag("Player"))
         {
             collision2D.gameObject.GetComponent<playerController>().TakeDamage(damage);
         }
@@ -46,7 +48,7 @@ public class WalkingEnemy : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        if (collider2D.gameObject.tag == "Player")
+        if (collider2D.gameObject.CompareTag("Player"))
         {
             collider2D.gameObject.GetComponent<playerController>().TakeDamage(damage);
         }

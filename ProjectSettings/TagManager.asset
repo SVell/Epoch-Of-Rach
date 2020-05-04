@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Potion
   - Enemy
+  - InvWall
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Ground
   - Enemy
   - Coin
-  - 
+  - InvWall
   - 
   - 
   - 

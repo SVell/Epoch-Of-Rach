@@ -18,6 +18,7 @@ public class Shooting : MonoBehaviour
     
     void Update()
     {
+        // Shooting delay
         time -= Time.deltaTime;
         if (time <= 0)
         {

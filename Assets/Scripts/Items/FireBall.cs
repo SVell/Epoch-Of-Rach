@@ -19,6 +19,7 @@ public class FireBall : MonoBehaviour
         transform.Translate( direction*transform.right * movementSpeed * Time.deltaTime);
     }
 
+    // Destroy and play part with sound
     void OnCollisionEnter2D(Collision2D collision2D)
     {
         if (collision2D.gameObject.tag == "Player")

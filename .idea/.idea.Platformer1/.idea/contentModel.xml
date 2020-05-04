@@ -220,7 +220,6 @@
           <e p="PauseMenu.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="HealthBar.cs" t="Include" />
-            <e p="PlayerComabt.cs" t="Include" />
             <e p="playerController.cs" t="Include" />
             <e p="playerJump.cs" t="Include" />
           </e>

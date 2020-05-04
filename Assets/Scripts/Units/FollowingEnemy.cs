@@ -8,15 +8,12 @@ public class FollowingEnemy : MonoBehaviour
 
     public int damage = 20;
     public AIPath aiPath;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
+        // TODO: Change direction upon walls
+        // Change direction upon end of the platform
         if (aiPath.desiredVelocity.x >= 0.01f)
         {
             transform.localScale = new Vector3(-1,1,1);

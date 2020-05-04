@@ -12,7 +12,7 @@ public class Chest : MonoBehaviour
     public AudioSource chest;
     
     
-    
+    // Weather or not a player collides with a chest
     void OnTriggerStay2D(Collider2D collider2D)
     {
         if (collider2D.gameObject.tag == "Player")
@@ -22,7 +22,7 @@ public class Chest : MonoBehaviour
                 chest.Play();
                 anim.SetInteger("state",1);
                 
-
+                // Prevent nullPointer
                 if (coins[0] != null)
                 {
                     coins[0].SetActive(true);
@@ -33,6 +33,7 @@ public class Chest : MonoBehaviour
         }
     }
 
+    // Enumerator for spawn delay 
     IEnumerator CoinsSpawn()
     {
         yield return new WaitForSeconds(0.5f);

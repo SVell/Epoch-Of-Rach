@@ -28,7 +28,7 @@ public class playerJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // isGrounded check
         if(Physics2D.OverlapCircle(point.position,pointRad,whatIsGround[0]))
         {
             isGrounded = Physics2D.OverlapCircle(point.position,pointRad,whatIsGround[0]);
@@ -38,10 +38,9 @@ public class playerJump : MonoBehaviour
             isGrounded = Physics2D.OverlapCircle(point.position,pointRad,whatIsGround[1]);
         }
         
-
+        
         if (rb.velocity.y < 0 && !isGrounded)
         {
-            print("Fly");
             anim.SetInteger("States",2);
         }
 
@@ -54,7 +53,7 @@ public class playerJump : MonoBehaviour
             
         }
         
-
+        // Jump
         if (Input.GetButtonUp("Jump"))
         {
             if (rb.velocity.y > 0)

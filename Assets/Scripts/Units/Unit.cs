@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
+    // Parent class for all units
+    
+    
     public int maxHealth = 10;
     public int health;
 
@@ -13,7 +16,7 @@ public class Unit : MonoBehaviour
     }
     
     
-    public virtual void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         health -= damage;
         

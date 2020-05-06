@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Items\Chest.cs" />
      <Compile Include="Assets\Scripts\Items\Destroyer.cs" />
      <Compile Include="Assets\Scripts\Items\FireBall.cs" />
+     <Compile Include="Assets\Scripts\Items\Gate.cs" />
      <Compile Include="Assets\Scripts\Items\HealingPotion.cs" />
      <Compile Include="Assets\Scripts\Items\Knife.cs" />
      <Compile Include="Assets\Scripts\Items\MovingPlatform.cs" />

@@ -215,6 +215,7 @@
             <e p="Chest.cs" t="Include" />
             <e p="Destroyer.cs" t="Include" />
             <e p="FireBall.cs" t="Include" />
+            <e p="Gate.cs" t="Include" />
             <e p="HealingPotion.cs" t="Include" />
             <e p="Knife.cs" t="Include" />
             <e p="MovingPlatform.cs" t="Include" />

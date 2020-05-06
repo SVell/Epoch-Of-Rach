@@ -36,6 +36,8 @@ public class playerController : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask whatIsEnemy;
     public float damageForce = 9f;
+    private float timeBtwAttacks;
+    public float startTimeBtwAttacks;
 
     // UI
     public Text coinCount;
@@ -65,9 +67,19 @@ public class playerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (timeBtwAttacks <= 0)
         {
-            StartCoroutine(Attack());
+            
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                StartCoroutine(Attack());
+                
+                timeBtwAttacks = startTimeBtwAttacks;
+            }
+        }
+        else
+        {
+            timeBtwAttacks -= Time.deltaTime;
         }
 
         if (health <= 0)
@@ -145,6 +157,21 @@ public class playerController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         keyUI.SetActive(false);
     }
+    
+    IEnumerator ChangeColor()
+    {
+        sr.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sr.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        sr.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sr.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        sr.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sr.color = Color.white;
+    }
 
     private void Walk(Vector2 dir)
     {
@@ -196,8 +223,7 @@ public class playerController : MonoBehaviour
         // Open gate
         if (collider2D.CompareTag("Gate"))
         {
-            Animator anim = collider2D.GetComponent<Animator>();
-            anim.SetBool("Open",true);
+            collider2D.GetComponent<Gate>().Open();
             keys--;
             StartCoroutine(PickKey());
         }
@@ -244,6 +270,8 @@ public class playerController : MonoBehaviour
         takeDamage.Play();
         healthBar.SetHealth(health);
         rb.velocity = new Vector2(rb.velocity.x, damageForce);
+
+        StartCoroutine(ChangeColor());
     }
 
     void OnDrawGizmosSelected()

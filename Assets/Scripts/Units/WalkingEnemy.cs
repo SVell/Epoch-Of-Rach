@@ -9,7 +9,7 @@ public class WalkingEnemy : MonoBehaviour
     public float speed;
     public float distance = 2f;
     public int damage = 20;
-
+    
     private bool movingRight = false;
 
     public Transform groundDetection;
@@ -25,15 +25,17 @@ public class WalkingEnemy : MonoBehaviour
         if (groundInfo.collider == false)
         {
             // Change direction of the movement
-            if (movingRight == true)
+            if (movingRight)
             {
-                transform.eulerAngles = new UnityEngine.Vector3(0,-180,0);
+                //transform.eulerAngles = new UnityEngine.Vector3(0,-180,0);
                 movingRight = false;
+                transform.Rotate(0,180,0);
             }
             else
             {
-                transform.eulerAngles = new UnityEngine.Vector3(0,0,0);
+                //transform.eulerAngles = new UnityEngine.Vector3(0,0,0);
                 movingRight = true;
+                transform.Rotate(0,180,0);
             }
         }
     }

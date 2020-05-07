@@ -24,11 +24,19 @@ public class FollowingEnemy : MonoBehaviour
         }
     }
     
-    void OnCollisionEnter2D(Collision2D collision2D)
+    void OnCollisionStay2D(Collision2D collision2D)
     {
-        if (collision2D.gameObject.tag == "Player")
+        if (collision2D.gameObject.CompareTag("Player"))
         {
             collision2D.gameObject.GetComponent<playerController>().TakeDamage(damage);
+        }
+    }
+    
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<playerController>().TakeDamage(damage);
         }
     }
 }

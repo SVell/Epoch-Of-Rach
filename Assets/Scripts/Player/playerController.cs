@@ -75,6 +75,11 @@ public class playerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PlayerPrefs.DeleteAll();
+        }
+        
         timeDamaged -= Time.deltaTime;
         
         if (timeBtwAttacks <= 0)

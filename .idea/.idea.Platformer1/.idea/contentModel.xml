@@ -225,6 +225,7 @@
             <e p="HealingPotion.cs" t="Include" />
             <e p="Knife.cs" t="Include" />
             <e p="MovingPlatform.cs" t="Include" />
+            <e p="Rock.cs" t="Include" />
           </e>
           <e p="PauseMenu.cs" t="Include" />
           <e p="Player" t="Include">

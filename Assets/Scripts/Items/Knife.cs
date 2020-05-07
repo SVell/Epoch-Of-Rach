@@ -31,4 +31,23 @@ public class Knife : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<Unit>().TakeDamage(20);
+            Destroy(gameObject);
+        }
+        if (other.gameObject.CompareTag("Destroyable"))
+        {
+            other.gameObject.GetComponent<box>().TakeDamage();
+            Destroy(gameObject);
+        }
+
+        if (!other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

@@ -26,6 +26,8 @@ public class playerController : MonoBehaviour
     public float time = 0;
     public playerJump plJ;
     private bool facingRight = true;
+    private float timeDamaged;
+    public float startTimeDamaged;
 
     private int coins = 0;
     private int keys = 0;
@@ -67,6 +69,8 @@ public class playerController : MonoBehaviour
 
     void Update()
     {
+        timeDamaged -= Time.deltaTime;
+        
         if (timeBtwAttacks <= 0)
         {
             
@@ -161,15 +165,15 @@ public class playerController : MonoBehaviour
     IEnumerator ChangeColor()
     {
         sr.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.08f);
         sr.color = Color.white;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.08f);
         sr.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.08f);
         sr.color = Color.white;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.08f);
         sr.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.08f);
         sr.color = Color.white;
     }
 
@@ -223,9 +227,12 @@ public class playerController : MonoBehaviour
         // Open gate
         if (collider2D.CompareTag("Gate"))
         {
-            collider2D.GetComponent<Gate>().Open();
-            keys--;
-            StartCoroutine(PickKey());
+            if (keys > 0)
+            {
+                collider2D.GetComponent<Gate>().Open();
+                keys--;
+                StartCoroutine(PickKey());
+            }
         }
 
         // Invisible walls
@@ -254,24 +261,29 @@ public class playerController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision2D)
+    void OnCollisionStay2D(Collision2D collision2D)
     {
         if (collision2D.gameObject.CompareTag("Obstacle"))
         {
-            Die();
+            TakeDamage(maxHealth/3);
         }
     }
 
 
     public void TakeDamage(int damage)
     {
-        // TODO: add force in opposite direction
-        health -= damage;
-        takeDamage.Play();
-        healthBar.SetHealth(health);
-        rb.velocity = new Vector2(rb.velocity.x, damageForce);
-
-        StartCoroutine(ChangeColor());
+        if (timeDamaged <= 0)
+        {
+            // TODO: add force in opposite direction
+            timeDamaged = startTimeDamaged;
+            health -= damage;
+            takeDamage.Play();
+            healthBar.SetHealth(health);
+            rb.velocity = new Vector2(rb.velocity.x, damageForce);
+            StartCoroutine(ChangeColor());
+        }
+        
+        
     }
 
     void OnDrawGizmosSelected()

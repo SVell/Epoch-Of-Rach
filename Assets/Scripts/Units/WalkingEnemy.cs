@@ -22,7 +22,8 @@ public class WalkingEnemy : MonoBehaviour
         // Raycast to detect the end of the platform
         int layerMask = LayerMask.GetMask ("Ground");
         RaycastHit2D groundInfo = Physics2D.Raycast (groundDetection.position, Vector2.down, distance, layerMask);
-        if (groundInfo.collider == false)
+        RaycastHit2D forwardInfo = Physics2D.Raycast (groundDetection.position, Vector2.left, distance, layerMask);
+        if (groundInfo.collider == false || forwardInfo.collider == true)
         {
             // Change direction of the movement
             if (movingRight)
@@ -40,7 +41,7 @@ public class WalkingEnemy : MonoBehaviour
         }
     }
     
-    void OnCollisionEnter2D(Collision2D collision2D)
+    void OnCollisionStay2D(Collision2D collision2D)
     {
         if (collision2D.gameObject.CompareTag("Player"))
         {
@@ -48,7 +49,7 @@ public class WalkingEnemy : MonoBehaviour
         }
     }
     
-    void OnTriggerEnter2D(Collider2D collider2D)
+    void OnTriggerStay2D(Collider2D collider2D)
     {
         if (collider2D.gameObject.CompareTag("Player"))
         {

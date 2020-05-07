@@ -262,13 +262,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a7e22fff887204a8456f5643849dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 60
   health: 100
   healthBar: {fileID: 0}
   anim: {fileID: 5496886747614621363}
   speed: 8
   time: 0
   plJ: {fileID: 5496886747614621361}
+  startTimeDamaged: 0.8
   damage: 20
   attackPoint: {fileID: 2126394928}
   attackRange: 0.55
@@ -276,6 +277,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   damageForce: 16
+  startTimeBtwAttacks: 0.4
   coinCount: {fileID: 0}
   dieMenu: {fileID: 0}
   keyUI: {fileID: 0}

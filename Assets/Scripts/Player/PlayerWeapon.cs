@@ -1,15 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    private int knifeNumber = 3;
+    private int knifeNumber = 0;
     
     public Transform firePoint;
     public GameObject bullet;
     public GameObject knifeUI;
+
+    private void Start()
+    {
+        knifeNumber += PlayerPrefs.GetInt("knifeCount");
+    }
 
     // Update is called once per frame
     void Update()

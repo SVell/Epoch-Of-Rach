@@ -4,6 +4,7 @@
     <e p="C:\Users\SVell\.Rider2019.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\SVell\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Platformer1.684830771.00" t="ExcludeRecursive" />
     <e p="D:\Unity\Platformer1" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="AstarPathfindingProject" t="Include">
@@ -207,6 +208,11 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
+        <e p="PlayerPrefsViewer" t="Include">
+          <e p="Editor" t="Include">
+            <e p="PlayerPrefsViewer.cs" t="Include" />
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="GameManager.cs" t="Include" />
           <e p="InvWall.cs" t="Include" />
@@ -226,8 +232,14 @@
             <e p="playerController.cs" t="Include" />
             <e p="playerJump.cs" t="Include" />
             <e p="PlayerWeapon.cs" t="Include" />
+            <e p="Win.cs" t="Include" />
           </e>
           <e p="SettingMenu.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="LevelUnlock.cs" t="Include" />
+            <e p="MenuLevelLoader.cs" t="Include" />
+            <e p="Shop.cs" t="Include" />
+          </e>
           <e p="Units" t="Include">
             <e p="FollowingEnemy.cs" t="Include" />
             <e p="FollowRadius.cs" t="Include" />

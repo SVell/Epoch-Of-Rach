@@ -57,12 +57,18 @@ public class playerController : MonoBehaviour
     #endregion
 
 
+    public int getCoins()
+    {
+        return coins;
+    }
+    
     #region UnityFunctions
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        maxHealth += PlayerPrefs.GetInt("hp");
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -143,7 +149,7 @@ public class playerController : MonoBehaviour
             if (x != null && x.GetComponent<Unit>() != null)
             {
                 // Damage enemies
-                x.GetComponent<Unit>().TakeDamage(damage);
+                x.GetComponent<Unit>().TakeDamage(damage + PlayerPrefs.GetInt("damage"));
             }
             else if (x != null && x.GetComponent<box>() != null)
             {

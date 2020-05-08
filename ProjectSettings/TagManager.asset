@@ -14,6 +14,7 @@ TagManager:
   - Gate
   - Destroyable
   - Knife
+  - Ground
   layers:
   - Default
   - TransparentFX

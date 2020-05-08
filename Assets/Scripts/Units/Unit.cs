@@ -14,6 +14,10 @@ public class Unit : MonoBehaviour
     public HealthBar healthBar;
     public SpriteRenderer sr;
 
+    public Animator anim;
+
+    private bool boss = false;
+    
     void Start()
     {
         health = maxHealth;
@@ -27,13 +31,18 @@ public class Unit : MonoBehaviour
         if(sr != null)
             StartCoroutine(ChangeColor());
         health -= damage;
-        StartCoroutine(ShowUI());
+        if(!boss)
+            StartCoroutine(ShowUI());
         if(healthBar != null)
             healthBar.SetHealth(health);
         
         if (health <= 0)
         {
             Die();
+            if (boss)
+            {
+                BossDie();
+            }
             Destroy(gameObject);
         }
     }
@@ -60,9 +69,25 @@ public class Unit : MonoBehaviour
         healthBar.gameObject.SetActive(false);
     }
 
+    public void ShowBossUI()
+    {
+        boss = true;
+        anim.SetBool("Enter",true);
+    }
+
     void Die()
     {
         // Die anim
         // Disable enemy
+    }
+    
+    void BossDie()
+    {
+        for (int i = 0; i < GetComponent<BossMage>().chest.Length; i++)
+        {
+            GetComponent<BossMage>().chest[i].SetActive(true);
+            
+        }
+        GetComponent<BossMage>().portal.SetActive(true);
     }
 }

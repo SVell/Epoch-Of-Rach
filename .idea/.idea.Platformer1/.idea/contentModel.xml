@@ -224,6 +224,7 @@
             <e p="Gate.cs" t="Include" />
             <e p="HealingPotion.cs" t="Include" />
             <e p="Knife.cs" t="Include" />
+            <e p="MageRock.cs" t="Include" />
             <e p="MovingPlatform.cs" t="Include" />
             <e p="Rock.cs" t="Include" />
           </e>
@@ -236,12 +237,15 @@
             <e p="Win.cs" t="Include" />
           </e>
           <e p="SettingMenu.cs" t="Include" />
+          <e p="StartBattle.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="LevelUnlock.cs" t="Include" />
             <e p="MenuLevelLoader.cs" t="Include" />
             <e p="Shop.cs" t="Include" />
           </e>
           <e p="Units" t="Include">
+            <e p="BossBullet.cs" t="Include" />
+            <e p="BossMage.cs" t="Include" />
             <e p="FollowingEnemy.cs" t="Include" />
             <e p="FollowRadius.cs" t="Include" />
             <e p="Shooting.cs" t="Include" />

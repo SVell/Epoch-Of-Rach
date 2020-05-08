@@ -52,7 +52,7 @@ public class Knife : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (!other.gameObject.CompareTag("Player"))
+        if (!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("EditorOnly"))
         {
             Destroy(gameObject);
         }

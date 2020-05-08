@@ -218,6 +218,8 @@ MonoBehaviour:
   health: 10
   healthBar: {fileID: 4341299697672152974}
   sr: {fileID: 3167929956262307449}
+  coins: {fileID: 7693194510513155960, guid: 02722201beeec7c49a9288a4510d2fb9, type: 3}
+  anim: {fileID: 0}
 --- !u!114 &3167929956262307451
 MonoBehaviour:
   m_ObjectHideFlags: 0

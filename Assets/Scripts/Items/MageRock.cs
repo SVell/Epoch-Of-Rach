@@ -29,7 +29,7 @@ public class MageRock : MonoBehaviour
             var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
-        catch (NullReferenceException e)
+        catch (NullReferenceException)
         {
             
         }

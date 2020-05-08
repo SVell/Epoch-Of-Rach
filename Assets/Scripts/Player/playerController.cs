@@ -279,6 +279,14 @@ public class playerController : MonoBehaviour
             TakeDamage(maxHealth/3);
         }
     }
+    
+    void OnTriggerStay2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Obstacle"))
+            {
+                TakeDamage(20);
+            }
+        }
 
 
     public void TakeDamage(int damage)

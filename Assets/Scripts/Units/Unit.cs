@@ -14,6 +14,8 @@ public class Unit : MonoBehaviour
     public HealthBar healthBar;
     public SpriteRenderer sr;
 
+    public GameObject coins;
+    
     public Animator anim;
 
     private bool boss = false;
@@ -77,8 +79,8 @@ public class Unit : MonoBehaviour
 
     void Die()
     {
-        // Die anim
-        // Disable enemy
+        if(coins != null)
+            Instantiate(coins,transform.position,transform.rotation);
     }
     
     void BossDie()

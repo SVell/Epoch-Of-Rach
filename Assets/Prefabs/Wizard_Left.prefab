@@ -177,6 +177,8 @@ MonoBehaviour:
   health: 0
   healthBar: {fileID: 92845554469524600}
   sr: {fileID: 6138722868640382408}
+  coins: {fileID: 7693194510513155960, guid: 02722201beeec7c49a9288a4510d2fb9, type: 3}
+  anim: {fileID: 0}
 --- !u!1 &6138722869444491707
 GameObject:
   m_ObjectHideFlags: 0

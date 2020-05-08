@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6142993854414908885}
   m_Layer: 0
   m_Name: FlyingEnemy
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -280,6 +280,8 @@ MonoBehaviour:
   health: 40
   healthBar: {fileID: 7091329364255676041}
   sr: {fileID: 6142993855779479108}
+  coins: {fileID: 7693194510513155960, guid: 02722201beeec7c49a9288a4510d2fb9, type: 3}
+  anim: {fileID: 0}
 --- !u!70 &6142993855779479118
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

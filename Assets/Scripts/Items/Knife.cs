@@ -12,7 +12,6 @@ public class Knife : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
-        damage += PlayerPrefs.GetInt("damage");
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -52,9 +51,9 @@ public class Knife : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("EditorOnly"))
+        if (!other.gameObject.CompareTag("Player") || !other.gameObject.CompareTag("EditorOnly") || !other.gameObject.CompareTag("FireBall") || !other.gameObject.CompareTag("Chest"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

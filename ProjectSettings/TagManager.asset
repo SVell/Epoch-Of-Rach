@@ -15,6 +15,7 @@ TagManager:
   - Destroyable
   - Knife
   - Ground
+  - Chest
   layers:
   - Default
   - TransparentFX

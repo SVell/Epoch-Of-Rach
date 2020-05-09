@@ -146,9 +146,10 @@ public class playerController : MonoBehaviour
         anim.SetInteger("States", 3);
         slash.Play();
 
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, whatIsEnemy);
+        
 
         yield return new WaitForSeconds(0.1f);
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, whatIsEnemy);
         foreach (Collider2D x in enemies)
         {
             if (x != null && x.GetComponent<Unit>() != null)

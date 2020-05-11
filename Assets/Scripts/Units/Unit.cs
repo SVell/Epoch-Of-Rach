@@ -18,11 +18,28 @@ public class Unit : MonoBehaviour
     
     public Animator anim;
 
-    private bool boss = false;
+    public bool boss = false;
+    public bool rach = false;
+
+    public AudioSource hit;
+
+    public GameObject end;
     
     void Start()
     {
-        health = maxHealth;
+        if (boss && PlayerPrefs.GetInt("damage") == 20)
+        {
+            health = maxHealth * 2;
+        }
+        else if (rach && PlayerPrefs.GetInt("damage") == 20)
+        {
+            health = maxHealth * 2;
+        }
+        else
+        {
+            health = maxHealth;
+        }
+        
         if(healthBar != null)
             healthBar.SetMaxHealth(maxHealth);
     }
@@ -30,6 +47,8 @@ public class Unit : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if(hit!=null)
+            hit.Play();
         if(sr != null)
             StartCoroutine(ChangeColor());
         health -= damage;
@@ -45,6 +64,13 @@ public class Unit : MonoBehaviour
             {
                 BossDie();
             }
+
+            if (end != null)
+            {
+                end.SetActive(true);
+                Time.timeScale = 0f;
+            }
+                
             Destroy(gameObject);
         }
     }
@@ -85,11 +111,14 @@ public class Unit : MonoBehaviour
     
     void BossDie()
     {
-        for (int i = 0; i < GetComponent<BossMage>().chest.Length; i++)
+        if (GetComponent<BossMage>())
         {
-            GetComponent<BossMage>().chest[i].SetActive(true);
+            for (int i = 0; i < GetComponent<BossMage>().chest.Length; i++)
+            {
+                GetComponent<BossMage>().chest[i].SetActive(true);
             
+            }
+            GetComponent<BossMage>().portal.SetActive(true);
         }
-        GetComponent<BossMage>().portal.SetActive(true);
     }
 }

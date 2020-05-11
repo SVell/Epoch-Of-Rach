@@ -4,7 +4,9 @@
     <e p="C:\Users\SVell\.Rider2019.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\SVell\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Platformer1.684830771.00" t="ExcludeRecursive" />
     <e p="D:\Unity\Platformer1" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="AstarPathfindingProject" t="Include">
@@ -208,12 +210,17 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
+        <e p="InGameFrameTimer" t="Include">
+          <e p="InGameFrameTimer.cs" t="Include" />
+          <e p="Readme.txt" t="Include" />
+        </e>
         <e p="PlayerPrefsViewer" t="Include">
           <e p="Editor" t="Include">
             <e p="PlayerPrefsViewer.cs" t="Include" />
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="FPS.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="InvWall.cs" t="Include" />
           <e p="Items" t="Include">
@@ -228,6 +235,7 @@
             <e p="MovingPlatform.cs" t="Include" />
             <e p="Rock.cs" t="Include" />
           </e>
+          <e p="Loader.cs" t="Include" />
           <e p="PauseMenu.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="HealthBar.cs" t="Include" />
@@ -248,9 +256,35 @@
             <e p="BossMage.cs" t="Include" />
             <e p="FollowingEnemy.cs" t="Include" />
             <e p="FollowRadius.cs" t="Include" />
+            <e p="Rach.cs" t="Include" />
             <e p="Shooting.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
             <e p="WalkingEnemy.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Standard Assets" t="Include">
+          <e p="CrossPlatformInput" t="Include">
+            <e p="CrossPlatformInputGuidelines.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="AxisTouchButton.cs" t="Include" />
+              <e p="ButtonHandler.cs" t="Include" />
+              <e p="CrossPlatformInputManager.cs" t="Include" />
+              <e p="InputAxisScrollbar.cs" t="Include" />
+              <e p="Joystick.cs" t="Include" />
+              <e p="MobileControlRig.cs" t="Include" />
+              <e p="PlatformSpecific" t="Include">
+                <e p="MobileInput.cs" t="Include" />
+                <e p="StandaloneInput.cs" t="Include" />
+              </e>
+              <e p="TiltInput.cs" t="Include" />
+              <e p="TouchPad.cs" t="Include" />
+              <e p="VirtualInput.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Editor" t="Include">
+            <e p="CrossPlatformInput" t="Include">
+              <e p="CrossPlatformInputInitialize.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

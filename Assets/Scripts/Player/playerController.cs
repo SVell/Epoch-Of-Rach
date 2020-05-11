@@ -8,6 +8,7 @@ using UnityEngine.Tilemaps;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class playerController : MonoBehaviour
 {
@@ -64,6 +65,11 @@ public class playerController : MonoBehaviour
     
     #region UnityFunctions
 
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -71,6 +77,7 @@ public class playerController : MonoBehaviour
         maxHealth += PlayerPrefs.GetInt("hp");
         health = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        rb.AddForce(new Vector2(1,0));
     }
 
     void Update()
@@ -81,8 +88,8 @@ public class playerController : MonoBehaviour
         }
         
         timeDamaged -= Time.deltaTime;
-        
-        if (timeBtwAttacks <= 0)
+        timeBtwAttacks -= Time.deltaTime;
+        /*if (timeBtwAttacks <= 0)
         {
             
             if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -94,8 +101,8 @@ public class playerController : MonoBehaviour
         }
         else
         {
-            timeBtwAttacks -= Time.deltaTime;
-        }
+            
+        }*/
 
         if (health <= 0)
         {
@@ -118,8 +125,8 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        float x = CrossPlatformInputManager.GetAxis("Horizontal");
+        float y = CrossPlatformInputManager.GetAxis("Vertical");
         Vector2 dir = new Vector2(x, 0);
 
 
@@ -138,13 +145,23 @@ public class playerController : MonoBehaviour
     }
 
     #endregion
+
+    public void MakeAttack()
+    {
+        if (timeBtwAttacks <= 0)
+        {
+            anim.SetInteger("States", 3);
+            slash.Play();
+            StartCoroutine(Attack());
+            timeBtwAttacks = startTimeBtwAttacks;
+        }
+    }
     
     // Attack enumerator for anim delay
     // TODO: Attack trigger delay
     IEnumerator Attack()
     {
         anim.SetInteger("States", 3);
-        slash.Play();
 
         
 

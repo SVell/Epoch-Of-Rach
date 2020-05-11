@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Advertisements;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.Monetization;
 public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
@@ -16,6 +19,14 @@ public class PauseMenu : MonoBehaviour
 
     public AudioSource chain;
 
+
+    private void Start()
+    {
+        if (Advertisement.isSupported)
+        {
+            //Advertisement.Initialize("3599068",false);
+        }
+    }
 
     void Update()
     {
@@ -31,6 +42,12 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+    }
+
+    public void ButtonPause()
+    {
+        pauseAnim.SetInteger("Pause",2);
+        Pause();
     }
 
     public void Resume()
@@ -80,8 +97,15 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         Scene scene = SceneManager.GetActiveScene();
         canBePaused = true;
+
+        if(Advertisement.IsReady("video"))
+        {
+            Advertisement.Show("video");
+        }
+        
         SceneManager.LoadScene(scene.name);
     }
+    
 
     public void PlayeGame()
     {

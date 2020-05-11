@@ -123,7 +123,7 @@ MonoBehaviour:
   projecTile: {fileID: 7028648525578858266, guid: 9c4fe14bf07e37f4e9d131319811cc68,
     type: 3}
   point: {fileID: 6138722869444491706}
-  timeOffset: 1.5
+  timeOffset: 2
 --- !u!50 &2364436506191669157
 Rigidbody2D:
   serializedVersion: 4
@@ -179,6 +179,8 @@ MonoBehaviour:
   sr: {fileID: 6138722868640382408}
   coins: {fileID: 7693194510513155960, guid: 02722201beeec7c49a9288a4510d2fb9, type: 3}
   anim: {fileID: 0}
+  boss: 0
+  hit: {fileID: 0}
 --- !u!1 &6138722869444491707
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ public class PlayerWeapon : MonoBehaviour
         knifeUI.SetActive(false);
     }
 
-    private void Shoot()
+    public void Shoot()
     {
         if (knifeNumber > 0)
         {

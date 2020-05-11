@@ -31,6 +31,6 @@ public class FireBall : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<Collider2D>().enabled = false;
         gameObject.GetComponentInChildren<Light2D>().enabled = false;
-        Destroy(gameObject,5f);
+        Destroy(gameObject,1f);
     }
 }

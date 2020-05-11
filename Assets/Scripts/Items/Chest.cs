@@ -2,26 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 public class Chest : MonoBehaviour
 {
     public Animator anim;
     public GameObject[] coins = new GameObject[3];
 
-
-    public AudioSource chest;
+    public Button button;
     
+    public AudioSource chest;
+
+    private bool wasInteracted = false;
     
     // Weather or not a player collides with a chest
     void OnTriggerStay2D(Collider2D collider2D)
     {
         if (collider2D.gameObject.tag == "Player")
         {
-            if (Input.GetKey(KeyCode.E))
+            if (!wasInteracted)
             {
                 chest.Play();
                 anim.SetInteger("state",1);
-                
+                wasInteracted = true;
                 // Prevent nullPointer
                 if (coins[0] != null)
                 {

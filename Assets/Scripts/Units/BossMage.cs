@@ -29,10 +29,7 @@ public class BossMage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetInt("Damage") == 20)
-        {
-            gameObject.GetComponent<Unit>().maxHealth *= 2;
-        }
+        
     }
 
     // Update is called once per frame
@@ -43,9 +40,12 @@ public class BossMage : MonoBehaviour
             Move();
             Shoot();
             ShootRock();
+            
         }
     }
 
+   
+    
     void Move()
     {
         if (target == null)

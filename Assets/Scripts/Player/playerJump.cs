@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class playerJump : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class playerJump : MonoBehaviour
     public float pointRad = 0.3f;
     public LayerMask[] whatIsGround;
     
+    private float isGroundedCounter;
+    public float isGroundedCounterOffset;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,7 @@ public class playerJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isGroundedCounter -= Time.deltaTime;
         // isGrounded check
         if(Physics2D.OverlapCircle(point.position,pointRad,whatIsGround[0]))
         {
@@ -38,23 +43,25 @@ public class playerJump : MonoBehaviour
             isGrounded = Physics2D.OverlapCircle(point.position,pointRad,whatIsGround[1]);
         }
         
+        if (isGrounded)
+        {
+            isGroundedCounter = isGroundedCounterOffset;
+        }
         
         if (rb.velocity.y < 0 && !isGrounded)
         {
-            anim.SetInteger("States",2);
+            //anim.SetInteger("States",2);
         }
-
         
-        
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (CrossPlatformInputManager.GetButtonDown("Jump") && isGroundedCounter > 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             anim.SetInteger("States",2);
-            
+            isGroundedCounter = -1;
         }
         
         // Jump
-        if (Input.GetButtonUp("Jump"))
+        if (CrossPlatformInputManager.GetButtonUp("Jump"))
         {
             if (rb.velocity.y > 0)
             {

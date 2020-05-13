@@ -222,7 +222,9 @@ MonoBehaviour:
   coins: {fileID: 7693194510513155960, guid: 02722201beeec7c49a9288a4510d2fb9, type: 3}
   anim: {fileID: 0}
   boss: 0
+  rach: 0
   hit: {fileID: 1110763038}
+  end: {fileID: 0}
 --- !u!114 &3167929956262307451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8956ed4601914344b775383fc459164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2
+  speed: -1.5
   distance: 0.8
   damage: 20
   groundDetection: {fileID: 3167929956148437089}

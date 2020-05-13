@@ -167,7 +167,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 18
   m_Sprite: {fileID: 21300000, guid: 6897f05bfc9ce3349a8cffed7bb19898, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -198,7 +198,9 @@ MonoBehaviour:
   coins: {fileID: 7693194510513155960, guid: 02722201beeec7c49a9288a4510d2fb9, type: 3}
   anim: {fileID: 0}
   boss: 0
+  rach: 0
   hit: {fileID: 0}
+  end: {fileID: 0}
 --- !u!70 &1673749006920243521
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

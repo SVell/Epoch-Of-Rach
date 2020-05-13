@@ -8,6 +8,9 @@ public class Win : MonoBehaviour
 {
     private int nextScene;
 
+    public bool playStart = true;
+    
+    
     public GameObject gameComplete;
     public Animator anim;
     

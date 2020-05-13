@@ -162,7 +162,6 @@ public class playerController : MonoBehaviour
     IEnumerator Attack()
     {
         anim.SetInteger("States", 3);
-
         
 
         yield return new WaitForSeconds(0.1f);

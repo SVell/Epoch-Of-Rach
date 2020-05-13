@@ -24,7 +24,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Advertisement.isSupported)
         {
-            //Advertisement.Initialize("3599068",false);
+            Advertisement.Initialize("3599068",false);
         }
     }
 

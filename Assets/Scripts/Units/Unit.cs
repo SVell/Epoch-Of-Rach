@@ -29,11 +29,13 @@ public class Unit : MonoBehaviour
     {
         if (boss && PlayerPrefs.GetInt("damage") == 20)
         {
-            health = maxHealth * 2;
+            maxHealth *= 2;
+            health = maxHealth;
         }
         else if (rach && PlayerPrefs.GetInt("damage") == 20)
         {
-            health = maxHealth * 2;
+            maxHealth *= 2;
+            health = maxHealth;
         }
         else
         {

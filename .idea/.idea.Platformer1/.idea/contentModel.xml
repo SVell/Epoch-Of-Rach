@@ -220,7 +220,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="FPS.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="InvWall.cs" t="Include" />
           <e p="Items" t="Include">

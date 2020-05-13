@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1503,10 +1503,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 686655012}
     m_Modifications:
+    - target: {fileID: 985757384, guid: d4787b4fd5887ac43bbe655ffbe322c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605416309, guid: d4787b4fd5887ac43bbe655ffbe322c4, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4507585290320357539, guid: d4787b4fd5887ac43bbe655ffbe322c4,
         type: 3}
       propertyPath: m_Name
       value: Win
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507585290320357548, guid: d4787b4fd5887ac43bbe655ffbe322c4,
+        type: 3}
+      propertyPath: playStart
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4507585290320357549, guid: d4787b4fd5887ac43bbe655ffbe322c4,
         type: 3}
@@ -4697,7 +4710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5935874bcbae4a24eb17c3cb92b974a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 120
   health: 40
   healthBar: {fileID: 723747604}
   sr: {fileID: 1081605434}
@@ -6698,28 +6711,15 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1605416309, guid: d4787b4fd5887ac43bbe655ffbe322c4, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: e3096e18cace18c43a234a09dfb75b47, type: 3}
-    - target: {fileID: 1605416309, guid: d4787b4fd5887ac43bbe655ffbe322c4, type: 3}
-      propertyPath: m_Volume
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 4507585290320357539, guid: d4787b4fd5887ac43bbe655ffbe322c4,
         type: 3}
       propertyPath: m_Name
       value: Win
       objectReference: {fileID: 0}
-    - target: {fileID: 4507585290320357539, guid: d4787b4fd5887ac43bbe655ffbe322c4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4507585290320357550, guid: d4787b4fd5887ac43bbe655ffbe322c4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 111.72
+      value: 63.7
       objectReference: {fileID: 0}
     - target: {fileID: 4507585290320357550, guid: d4787b4fd5887ac43bbe655ffbe322c4,
         type: 3}

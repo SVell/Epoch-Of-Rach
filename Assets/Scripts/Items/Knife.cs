@@ -12,6 +12,10 @@ public class Knife : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
+        if (PlayerPrefs.GetInt("damage") == 20)
+        {
+            damage *= 2;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)

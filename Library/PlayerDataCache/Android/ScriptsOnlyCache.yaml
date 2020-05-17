@@ -100,8 +100,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -827,7 +829,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16088}
     - Class: 114
-      Script: {instanceID: 39446}
+      Script: {instanceID: 64638}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -3140,4 +3142,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level06.unity
   - Assets/Scenes/Level07.unity
   - Assets/Scenes/Level08.unity
-  playerPath: D:/Unity/Platformer1/Build/EoRGS.aab
+  playerPath: D:/Unity/Platformer1/Build/EoR.apk

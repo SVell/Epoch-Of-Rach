@@ -6,6 +6,8 @@ using UnityEngine.Advertisements;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.Monetization;
+using Random = UnityEngine.Random;
+
 public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
@@ -93,16 +95,30 @@ public class PauseMenu : MonoBehaviour
     
     public void RestartLevel()
     {
+        
+
+        StartCoroutine(Add());
+        
+        
+    }
+
+    public IEnumerator Add()
+    {
         gameIsPaused = false;
         Time.timeScale = 1f;
         Scene scene = SceneManager.GetActiveScene();
         canBePaused = true;
-
+        
         if(Advertisement.IsReady("video"))
         {
-            Advertisement.Show("video");
+            float randomValue = Random.value;
+            if (randomValue < 0.7f)
+            {
+                Advertisement.Show("video");
+                yield return new WaitForSeconds(1f);
+            }
+
         }
-        
         SceneManager.LoadScene(scene.name);
     }
     

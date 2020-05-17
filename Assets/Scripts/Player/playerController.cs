@@ -102,8 +102,13 @@ public class playerController : MonoBehaviour
         else
         {
             
-        }*/
-
+        }*/ 
+        
+        float x = CrossPlatformInputManager.GetAxis("Horizontal");
+        float y = CrossPlatformInputManager.GetAxis("Vertical");
+        Vector2 dir = new Vector2(x, 0);
+        Walk(dir);
+        
         if (health <= 0)
         {
             Die();
@@ -125,9 +130,9 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float x = CrossPlatformInputManager.GetAxis("Horizontal");
+        /*float x = CrossPlatformInputManager.GetAxis("Horizontal");
         float y = CrossPlatformInputManager.GetAxis("Vertical");
-        Vector2 dir = new Vector2(x, 0);
+        Vector2 dir = new Vector2(x, 0);*/
 
 
         if (time > 0)
@@ -135,7 +140,7 @@ public class playerController : MonoBehaviour
             time--;
         }
 
-        Walk(dir);
+        //Walk(dir);
 
 
         if (rb.velocity.x == 0 && rb.velocity.y == 0)

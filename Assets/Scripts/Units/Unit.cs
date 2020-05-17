@@ -70,7 +70,10 @@ public class Unit : MonoBehaviour
             if (end != null)
             {
                 end.SetActive(true);
-                Time.timeScale = 0f;
+                if (rach)
+                {
+                    Time.timeScale = 0f;
+                }
             }
                 
             Destroy(gameObject);

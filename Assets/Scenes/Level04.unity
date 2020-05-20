@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -941,7 +941,7 @@ PrefabInstance:
     - target: {fileID: 2914372640003140004, guid: 835d7159f63e8c24781ee7fbebff46b8,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3110650341712918362, guid: 835d7159f63e8c24781ee7fbebff46b8,
         type: 3}
@@ -1008,10 +1008,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinNew
       objectReference: {fileID: 0}
+    - target: {fileID: 3793261942381231191, guid: 835d7159f63e8c24781ee7fbebff46b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8024105282405070763, guid: 835d7159f63e8c24781ee7fbebff46b8,
         type: 3}
       propertyPath: playStart
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8024105282405070763, guid: 835d7159f63e8c24781ee7fbebff46b8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 835d7159f63e8c24781ee7fbebff46b8, type: 3}
@@ -4704,6 +4714,7 @@ MonoBehaviour:
   - {fileID: 1929371908}
   - {fileID: 1006469249}
   portal: {fileID: 686655009}
+  unit: {fileID: 1081605437}
 --- !u!114 &1081605437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38213,6 +38224,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2914372640003140004, guid: 835d7159f63e8c24781ee7fbebff46b8,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -222.71155
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914372640003140004, guid: 835d7159f63e8c24781ee7fbebff46b8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.4819336
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914372640003140004, guid: 835d7159f63e8c24781ee7fbebff46b8,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 24.748163
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914372640003140004, guid: 835d7159f63e8c24781ee7fbebff46b8,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.8600044
+      objectReference: {fileID: 0}
     - target: {fileID: 3110650341712918362, guid: 835d7159f63e8c24781ee7fbebff46b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38296,7 +38327,7 @@ PrefabInstance:
     - target: {fileID: 8024105282405070763, guid: 835d7159f63e8c24781ee7fbebff46b8,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 835d7159f63e8c24781ee7fbebff46b8, type: 3}

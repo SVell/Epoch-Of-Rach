@@ -20,6 +20,7 @@ public class playerJump : MonoBehaviour
     
     private float isGroundedCounter;
     public float isGroundedCounterOffset;
+    private bool hasJumped = false;
     
     // Start is called before the first frame update
     void Start()
@@ -42,22 +43,24 @@ public class playerJump : MonoBehaviour
         {
             isGrounded = Physics2D.OverlapCircle(point.position,pointRad,whatIsGround[1]);
         }
-        
+
         if (isGrounded)
         {
             isGroundedCounter = isGroundedCounterOffset;
+            hasJumped = false;
         }
         
         if (rb.velocity.y < 0 && !isGrounded)
         {
             //anim.SetInteger("States",2);
         }
-        
+
         if (CrossPlatformInputManager.GetButtonDown("Jump") && isGroundedCounter > 0)
         {
+            isGrounded = false;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             anim.SetInteger("States",2);
-            isGroundedCounter = -1;
+            isGroundedCounter = -10;
         }
         
         // Jump
@@ -70,7 +73,7 @@ public class playerJump : MonoBehaviour
             }
             else if (rb.velocity.y < 0)
             {
-               anim.SetInteger("States",2);
+                anim.SetInteger("States",2);
             }
             
         }

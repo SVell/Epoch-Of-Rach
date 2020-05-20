@@ -130150,6 +130150,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinNew
       objectReference: {fileID: 0}
+    - target: {fileID: 3793261942381231191, guid: 835d7159f63e8c24781ee7fbebff46b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 835d7159f63e8c24781ee7fbebff46b8, type: 3}
 --- !u!4 &1095642710 stripped
@@ -141180,7 +141185,7 @@ PrefabInstance:
     - target: {fileID: 6526415362707150709, guid: bda0c9023b906e74a963b840ccd72f7b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 120.50078
+      value: 120.694
       objectReference: {fileID: 0}
     - target: {fileID: 6526415362707150709, guid: bda0c9023b906e74a963b840ccd72f7b,
         type: 3}

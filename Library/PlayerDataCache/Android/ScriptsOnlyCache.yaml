@@ -45,7 +45,6 @@ ScriptsOnlyBuild:
     - Cinemachine.CinemachineVirtualCamera
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -829,7 +828,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16088}
     - Class: 114
-      Script: {instanceID: 64638}
+      Script: {instanceID: 34376}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2131,7 +2130,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerIndirectToggle
   - hash:
       serializedVersion: 2
-      Hash: 3de3c3d7ca5655d1aa0a9962362ce649
+      Hash: 674bc1adbf2ec4ffabe12c9008cf0da0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BossMage
@@ -3142,4 +3141,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level06.unity
   - Assets/Scenes/Level07.unity
   - Assets/Scenes/Level08.unity
-  playerPath: D:/Unity/Platformer1/Build/EoR.apk
+  playerPath: D:/Unity/Platformer1/Build/EoRGSJump.aab

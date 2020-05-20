@@ -24,6 +24,7 @@ public class BossMage : MonoBehaviour
 
     public GameObject[] chest;
     public GameObject portal;
+    public Unit unit;
     
     
     // Start is called before the first frame update
@@ -35,6 +36,11 @@ public class BossMage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            unit.TakeDamage(20);
+        }
+        
         if (StartBattle.startBattle)
         {
             Move();

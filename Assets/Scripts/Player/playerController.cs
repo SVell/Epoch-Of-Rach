@@ -167,9 +167,9 @@ public class playerController : MonoBehaviour
     IEnumerator Attack()
     {
         anim.SetInteger("States", 3);
-        
+        anim.SetBool("Attack",true);
 
-        yield return new WaitForSeconds(0.1f);
+        //yield return new WaitForSeconds(0.1f);
         Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, whatIsEnemy);
         foreach (Collider2D x in enemies)
         {
@@ -184,6 +184,8 @@ public class playerController : MonoBehaviour
                 x.GetComponent<box>().TakeDamage();
             }
         }
+        yield return new WaitForSeconds(0.3f);
+        anim.SetBool("Attack",false);
     }
     
     IEnumerator PickKey()

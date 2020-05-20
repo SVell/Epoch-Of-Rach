@@ -2406,6 +2406,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ButtonPause
       objectReference: {fileID: 0}
+    - target: {fileID: 5496886747614621322, guid: 22f2fa6cb4ce2134c8000142e82543f6,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5496886747614621323, guid: 22f2fa6cb4ce2134c8000142e82543f6,
         type: 3}
       propertyPath: m_Name
@@ -2515,6 +2520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpForce
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496886747614621361, guid: 22f2fa6cb4ce2134c8000142e82543f6,
+        type: 3}
+      propertyPath: pointRad
+      value: 0.16782
       objectReference: {fileID: 0}
     - target: {fileID: 5496886747614621363, guid: 22f2fa6cb4ce2134c8000142e82543f6,
         type: 3}
@@ -65284,6 +65294,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1737cbbe2c491c148b78375e41aa0ac5, type: 3}
+--- !u!1 &1034549906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5496886749399577457, guid: 22f2fa6cb4ce2134c8000142e82543f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 555524734}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1034549908
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034549906}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.002937317, y: 0.05580902}
+  serializedVersion: 2
+  m_Radius: 0.16781998
 --- !u!4 &1042620559 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1262123232503675728, guid: 293f965d98f245c469514c1c54630df5,
@@ -73328,9 +73360,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!19719996 &1783760873
 TilemapCollider2D:
